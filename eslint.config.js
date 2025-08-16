@@ -24,6 +24,9 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-unused-vars": "off",
+      "react/no-danger": ["error", {
+        "allow": ["src/components/ui/chart.tsx"]
+      }],
     },
   }
 );
