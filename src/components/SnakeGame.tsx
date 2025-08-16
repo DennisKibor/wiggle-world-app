@@ -82,10 +82,17 @@ export const SnakeGame = () => {
           break;
       }
 
-      // Check wall collision
-      if (head.x < 0 || head.x >= BOARD_SIZE || head.y < 0 || head.y >= BOARD_SIZE) {
-        gameOver();
-        return currentSnake;
+      // Handle wall wrapping instead of collision
+      if (head.x < 0) {
+        head.x = BOARD_SIZE - 1;
+      } else if (head.x >= BOARD_SIZE) {
+        head.x = 0;
+      }
+      
+      if (head.y < 0) {
+        head.y = BOARD_SIZE - 1;
+      } else if (head.y >= BOARD_SIZE) {
+        head.y = 0;
       }
 
       // Check self collision
@@ -228,7 +235,8 @@ export const SnakeGame = () => {
         <p className="mb-2">How to play:</p>
         <p>• Use arrow keys or WASD to control the snake</p>
         <p>• Eat the red food to grow and score points</p>
-        <p>• Avoid hitting walls or your own tail</p>
+        <p>• Snake wraps around when it reaches the edges</p>
+        <p>• Avoid hitting your own tail</p>
       </Card>
     </div>
   );
