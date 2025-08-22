@@ -2,60 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Gaming Design System - Dark arcade theme with neon accents */
+/* DoviEnterprise Professional Design System */
 
 @layer base {
   :root {
-    /* Core Gaming Colors */
-    --background: 240 10% 8%;
-    --foreground: 220 100% 85%;
+    /* Professional Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
     
-    /* Game Elements */
-    --card: 240 8% 12%;
-    --card-foreground: 220 100% 85%;
+    /* Card Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
     
-    --popover: 240 8% 12%;
-    --popover-foreground: 220 100% 85%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
     
-    /* Gaming Primary - Electric Blue */
-    --primary: 220 100% 50%;
-    --primary-foreground: 240 10% 8%;
+    /* DoviEnterprise Primary - Royal Blue */
+    --primary: 220 100% 32%;
+    --primary-foreground: 0 0% 98%;
     
-    /* Gaming Secondary - Cyan Blue */
-    --secondary: 190 100% 60%;
-    --secondary-foreground: 240 10% 8%;
+    /* Professional Secondary - Light Gray */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 84% 4.9%;
     
-    /* Muted Gaming Colors */
-    --muted: 240 8% 16%;
-    --muted-foreground: 220 20% 65%;
+    /* Professional Muted Colors */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     
-    /* Gaming Accent - Sky Blue */
-    --accent: 200 100% 70%;
-    --accent-foreground: 240 10% 8%;
+    /* DoviEnterprise Accent - Bright Green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
     
-    /* Game Over - Red Alert */
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 240 10% 8%;
+    /* Professional Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
     
-    /* Gaming UI */
-    --border: 220 50% 25%;
-    --input: 240 8% 16%;
-    --ring: 220 100% 50%;
+    /* Professional UI */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 100% 32%;
     
-    /* Gaming Specific Colors */
-    --snake: 220 100% 50%;
-    --food: 15 100% 60%;
-    --game-board: 240 8% 10%;
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 100% 32%), hsl(220 100% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
     
-    /* Gaming Gradients */
-    --gradient-neon: linear-gradient(135deg, hsl(220 100% 50%), hsl(190 100% 60%));
-    --gradient-game: linear-gradient(180deg, hsl(240 10% 8%), hsl(240 8% 12%));
-    --gradient-glow: radial-gradient(circle, hsl(220 100% 50% / 0.3), transparent 70%);
-    
-    /* Gaming Shadows */
-    --shadow-neon: 0 0 20px hsl(220 100% 50% / 0.5);
-    --shadow-game: 0 8px 32px hsl(240 10% 4% / 0.8);
-    --shadow-food: 0 0 15px hsl(15 100% 60% / 0.6);
+    /* Professional Shadows */
+    --shadow-professional: 0 4px 6px -1px hsl(220 100% 32% / 0.1), 0 2px 4px -1px hsl(220 100% 32% / 0.06);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
+    --shadow-accent: 0 4px 14px 0 hsl(142 76% 36% / 0.25);
 
     --radius: 0.75rem;
 
@@ -77,26 +72,26 @@
   }
 
   .dark {
-    /* Dark mode uses same blue gaming theme */
-    --background: 240 10% 8%;
-    --foreground: 220 100% 85%;
-    --card: 240 8% 12%;
-    --card-foreground: 220 100% 85%;
-    --popover: 240 8% 12%;
-    --popover-foreground: 220 100% 85%;
-    --primary: 220 100% 50%;
-    --primary-foreground: 240 10% 8%;
-    --secondary: 190 100% 60%;
-    --secondary-foreground: 240 10% 8%;
-    --muted: 240 8% 16%;
-    --muted-foreground: 220 20% 65%;
-    --accent: 200 100% 70%;
-    --accent-foreground: 240 10% 8%;
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 240 10% 8%;
-    --border: 220 50% 25%;
-    --input: 240 8% 16%;
-    --ring: 220 100% 50%;
+    /* Dark mode professional theme */
+    --background: 222 84% 4.9%;
+    --foreground: 0 0% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 100% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 142 76% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 220 100% 45%;
   }
 }
 
@@ -107,47 +102,32 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  /* Gaming UI Classes */
-  .game-board {
-    background: hsl(var(--game-board));
-    border: 2px solid hsl(var(--primary));
-    box-shadow: var(--shadow-neon), inset 0 0 50px hsl(240 8% 6%);
+  /* Professional UI Classes */
+  .hero-gradient {
+    background: var(--gradient-hero);
+    box-shadow: var(--shadow-professional);
   }
 
-  .snake-segment {
-    background: hsl(var(--snake));
-    box-shadow: var(--shadow-neon);
-    border-radius: 2px;
+  .accent-gradient {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-accent);
   }
 
-  .food {
-    background: hsl(var(--food));
-    box-shadow: var(--shadow-food);
-    border-radius: 50%;
-    animation: pulse-food 1.5s ease-in-out infinite alternate;
-  }
-
-  .neon-text {
-    color: hsl(var(--primary));
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.8);
-  }
-
-  .game-button {
-    background: var(--gradient-neon);
-    box-shadow: var(--shadow-neon);
+  .professional-card {
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-card);
     transition: all 0.3s ease;
   }
 
-  .game-button:hover {
+  .professional-card:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-neon), 0 8px 25px hsl(220 100% 50% / 0.3);
+    box-shadow: var(--shadow-professional);
   }
-}
 
-@keyframes pulse-food {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.1); opacity: 1; }
+  .section-gradient {
+    background: var(--gradient-subtle);
+  }
 }
