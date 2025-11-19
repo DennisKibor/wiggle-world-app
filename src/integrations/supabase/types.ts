@@ -14,7 +14,199 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      datasets: {
+        Row: {
+          column_types: Json | null
+          created_at: string | null
+          data: Json
+          file_url: string | null
+          id: string
+          name: string
+          project_id: string
+          row_count: number | null
+          user_id: string
+        }
+        Insert: {
+          column_types?: Json | null
+          created_at?: string | null
+          data: Json
+          file_url?: string | null
+          id?: string
+          name: string
+          project_id: string
+          row_count?: number | null
+          user_id: string
+        }
+        Update: {
+          column_types?: Json | null
+          created_at?: string | null
+          data?: Json
+          file_url?: string | null
+          id?: string
+          name?: string
+          project_id?: string
+          row_count?: number | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "datasets_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          id: string
+          name: string
+          status: Database["public"]["Enums"]["project_status"] | null
+          thumbnail_url: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name: string
+          status?: Database["public"]["Enums"]["project_status"] | null
+          thumbnail_url?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          name?: string
+          status?: Database["public"]["Enums"]["project_status"] | null
+          thumbnail_url?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      templates: {
+        Row: {
+          chart_type: Database["public"]["Enums"]["chart_type"]
+          config: Json
+          created_at: string | null
+          description: string | null
+          id: string
+          is_premium: boolean | null
+          name: string
+          thumbnail_url: string | null
+        }
+        Insert: {
+          chart_type: Database["public"]["Enums"]["chart_type"]
+          config: Json
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          is_premium?: boolean | null
+          name: string
+          thumbnail_url?: string | null
+        }
+        Update: {
+          chart_type?: Database["public"]["Enums"]["chart_type"]
+          config?: Json
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          is_premium?: boolean | null
+          name?: string
+          thumbnail_url?: string | null
+        }
+        Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          api_key: string | null
+          avatar_url: string | null
+          created_at: string | null
+          full_name: string | null
+          id: string
+          subscription_tier:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          api_key?: string | null
+          avatar_url?: string | null
+          created_at?: string | null
+          full_name?: string | null
+          id: string
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          api_key?: string | null
+          avatar_url?: string | null
+          created_at?: string | null
+          full_name?: string | null
+          id?: string
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      visualizations: {
+        Row: {
+          chart_type: Database["public"]["Enums"]["chart_type"]
+          config: Json
+          created_at: string | null
+          data_mapping: Json | null
+          id: string
+          project_id: string
+          theme: Json | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          chart_type: Database["public"]["Enums"]["chart_type"]
+          config: Json
+          created_at?: string | null
+          data_mapping?: Json | null
+          id?: string
+          project_id: string
+          theme?: Json | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          chart_type?: Database["public"]["Enums"]["chart_type"]
+          config?: Json
+          created_at?: string | null
+          data_mapping?: Json | null
+          id?: string
+          project_id?: string
+          theme?: Json | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "visualizations_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +215,21 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      chart_type:
+        | "bar"
+        | "line"
+        | "pie"
+        | "area"
+        | "scatter"
+        | "bubble"
+        | "radar"
+        | "radial"
+        | "funnel"
+        | "timeline"
+        | "heatmap"
+        | "treemap"
+      project_status: "draft" | "published" | "archived"
+      subscription_tier: "free" | "pro" | "team" | "enterprise"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +356,23 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      chart_type: [
+        "bar",
+        "line",
+        "pie",
+        "area",
+        "scatter",
+        "bubble",
+        "radar",
+        "radial",
+        "funnel",
+        "timeline",
+        "heatmap",
+        "treemap",
+      ],
+      project_status: ["draft", "published", "archived"],
+      subscription_tier: ["free", "pro", "team", "enterprise"],
+    },
   },
 } as const
